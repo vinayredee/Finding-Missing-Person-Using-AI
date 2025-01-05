@@ -1,0 +1,174 @@
+
+
+/* Fullscreen Background Image */
+.fullscreen-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.8);
+}
+
+h2, h3 {
+    color: #1fb1ca;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Navbar styles */
+#navbar {
+    
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Fullscreen Background Image */
+.fullscreen-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.8);
+}
+
+#navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#navbar ul li {
+    margin: 0 10px;
+}
+
+.nav-button {
+    background-color: #4a90e2; /* Blue buttons */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.nav-button a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background-color: #357ab8; /* Darker blue on hover */
+    transform: scale(1.05);
+}
+
+.auth-buttons span {
+    color: white;
+    margin-right: 10px;
+}
+
+.signout-button {
+    background-color: #4dff74; /* Red button for sign-out */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.signout-button a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.signout-button:hover {
+    background-color: #fcfcfc; /* Darker red on hover */
+}
+
+/* Person details section */
+.person-details, .registrant-details {
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    
+}
+
+.person-details h3, .registrant-details h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #11bee1;
+    padding-bottom: 5px;
+    color: #ffffff;
+}
+
+.person-details p, .registrant-details p {
+    margin: 8px 0;
+    color: #ffffff;
+}
+
+/* Image container to align images side by side */
+.image-container {
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center the images */
+    align-items: center; /* Vertically align images */
+    gap: 20px; /* Add space between images */
+    flex-wrap: nowrap; /* Prevent images from wrapping */
+    padding: 20px;
+}
+
+/* Styling images to ensure they appear side by side */
+.image-container img {
+    max-width: 200px; /* Maximum width for images */
+    max-height: 200px; /* Maximum height for images */
+    border: 1px solid #ddd; /* Border around images */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding inside the border */
+}
+
+/* If there's no image */
+.image-container p {
+    color: #555;
+    text-align: center;
+}
+
+/* Error message */
+.error-message {
+    text-align: center;
+    background-color: #ffecec;
+    color: #d9534f;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 5px;
+    max-width: 600px;
+    font-size: 16px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column; /* Stack images vertically on smaller screens */
+        align-items: center; /* Align images to the center */
+        gap: 10px; /* Adjust space between images */
+    }
+
+    #navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .person-details, .registrant-details, .image-container, .error-message {
+        margin: 10px;
+        padding: 15px;
+    }
+}
