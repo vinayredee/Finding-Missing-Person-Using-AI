@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Not Found</title>
+    <link rel="stylesheet" href="{% static 'css/not_found.css' %}">
+</head>
+<body>
+    <img src="{% static 'project/08.png' %}" alt="Background Image" class="fullscreen-image">
+    <nav id="navbar">
+        <ul>
+            <li><button class="nav-button"><a href="{% url 'index' %}">Home</a></button></li>
+            <li><button class="nav-button"><a href="{% url 'cases:add_case' %}">Cases</a></button></li>
+            <li><button class="nav-button"><a href="{% url 'finding:find_person' %}">Finding</a></button></li>
+        </ul>
+        <div class="auth-buttons">
+            <span>Welcome, {{ request.session.username }}!</span>
+            <button type="button" class="signout-button"><a href="{% url 'signout' %}">Sign Out</a></button>
+        </div>
+    </nav>
+    
+    <h1>Person Not Found</h1>
+    
+    <p>We could not find a match for the person in the image you uploaded.</p>
+    <p>Please register as a new case if you not found the match for the image or reach nearest police station and address to the police.<p>
+    <p>If the person is indeed missing, you can <a href="{% url 'cases:add_case' %}">[ add a case ]</a> for them.</p>
+
+    <li><button class="retry"><a href="{% url 'finding:find_person' %}">Retry</a></button></li>
+</body>
+</html>

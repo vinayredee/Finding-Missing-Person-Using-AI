@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Missing Person</title>
+    <!-- Link the CSS file -->
+    <link rel="stylesheet" href="{% static 'css/add_case.css' %}">
+</head>
+<body>
+    <img src="{% static 'project/05.png' %}" alt="Background Image" class="fullscreen-image">
+    <nav id="navbar">
+        <ul>
+            <li><button class="nav-button"><a href="{% url 'index' %}">Home</a></button></li>
+            <li><button class="nav-button"><a href="{% url 'cases:add_case' %}">Cases</a></button></li>
+            <li><button class="nav-button"><a href="{% url 'finding:find_person' %}">Finding</a></button></li>
+        </ul>
+        <div class="auth-buttons">
+            <span>Welcome, {{ request.session.username }}!</span>
+            <button type="button" class="signout-button"><a href="{% url 'signout' %}">Sign Out</a></button>
+        </div>
+    </nav>
+    <h1>Add Missing Person</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

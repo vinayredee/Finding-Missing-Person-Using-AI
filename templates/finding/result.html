@@ -1,0 +1,64 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/result.css' %}">
+</head>
+<nav id="navbar">
+    <ul>
+        <li><button class="nav-button"><a href="{% url 'index' %}">Home</a></button></li>
+        <li><button class="nav-button"><a href="{% url 'cases:add_case' %}">Cases</a></button></li>
+        <li><button class="nav-button"><a href="{% url 'finding:find_person' %}">Finding</a></button></li>
+    </ul>
+    <div class="auth-buttons">
+        <span>Welcome, {{ request.session.username }}!</span>
+        <button type="button" class="signout-button"><a href="{% url 'signout' %}">Sign Out</a></button>
+    </div>
+</nav>
+<img src="{% static 'project/07.png' %}" alt="Background Image" class="fullscreen-image">
+{% if person %}
+    <h2>Person Found!</h2>
+
+    <div class="person-details">
+        <h3>Missing Person's Details:</h3>
+        <p><strong>Name:</strong> {{ person.name }}</p>
+        <p><strong>Age:</strong> {{ person.age }}</p>
+        <p><strong>Gender:</strong> {{ person.gender }}</p>
+        <p><strong>Height:</strong> {{ person.height }}</p>
+        <p><strong>Description:</strong> {{ person.description }}</p>
+        <p><strong>Language:</strong> {{ person.language }}</p>
+        <p><strong>City:</strong> {{ person.city }}</p>
+    </div>
+
+    <div class="registrant-details">
+        <h3>Case Registered By:</h3>
+        <p><strong>Registrant Name:</strong> {{ person.case_registered_by }}</p>
+        <p><strong>Email:</strong> {{ person.email }}</p>
+        <p><strong>Phone Number:</strong> {{ person.phone_number }}</p>
+        <p><strong>Address:</strong> {{ person.address }}</p>
+    </div>
+
+    <!-- Image container -->
+    <div class="image-container">
+        <h2>Uploaded Image</h2>
+        {% if uploaded_image_url %}
+            <img src="{{ uploaded_image_url }}" alt="Uploaded Image" />
+        {% else %}
+            <p>No uploaded image available.</p>
+        {% endif %}
+
+        <!-- Missing person's photo -->
+        <h3>Missing Person Photo</h3>
+        {% if person.photo %}
+            <img src="{{ person.photo.url }}" alt="Missing Person Photo" />
+        {% else %}
+            <p>No photo available for this missing person.</p>
+        {% endif %}
+    </div>
+
+{% else %}
+    <h2>No Match Found</h2>
+
+    <div class="error-message">
+        <p>{{ error }}</p>
+    </div>
+{% endif %}
+
