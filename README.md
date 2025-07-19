@@ -31,5 +31,13 @@ User submits missing person details via a form. Data is stored in the database. 
 - Provides admin interface to manage case records. ✔  
 - User-friendly design for quick access and updates. 🔎
 
+## Technologies Used  
+- **Python** 
+- **Django** (Web Framework)   
+- **SQLite** (Database) 💾  
+- **HTML & CSS** (Templates and Styling)
+- **VS Code** (Development Environment) 
+
+- 
 ## Contact  
 For any inquiries or feedback, please contact **VINAY REDDY** at **kunduvinayredde@gmail.com**
