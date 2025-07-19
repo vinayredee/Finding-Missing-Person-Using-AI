@@ -26,15 +26,15 @@ User submits missing person details via a form. Data is stored in the database. 
 
 
 ## Features  
-- Allows users to register missing person cases. 🧾  
-- Stores case information securely in a database. 🗂  
-- Provides admin interface to manage case records. ✔  
-- User-friendly design for quick access and updates. 🔎
+- Allows users to register missing person cases.   
+- Stores case information securely in a database. 
+- Provides admin interface to manage case records. 
+- User-friendly design for quick access and updates.
 
 ## Technologies Used  
 - **Python** 
 - **Django** (Web Framework)   
-- **SQLite** (Database) 💾  
+- **SQLite** (Database) 
 - **HTML & CSS** (Templates and Styling)
 - **VS Code** (Development Environment) 
 
